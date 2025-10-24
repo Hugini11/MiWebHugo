@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   web:
     image: php:8.2-apache
@@ -6,10 +7,19 @@ services:
       - "8080:80"
     volumes:
       - ./public:/var/www/html
+    depends_on:
+      - db
+
   db:
     image: mysql:8
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: demo
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
