@@ -31,5 +31,5 @@ jobs:
 
       - name: Esperar i mostrar la URL pública
         run: |
-          sleep 5
+          sleep 600 
           curl --silent http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url'
