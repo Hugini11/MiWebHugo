@@ -7,6 +7,7 @@ $database = "demo";
 echo "<h2>Prova de connexió a la Base de Dades MySQL</h2>";
 
 $conn = new mysqli($servername, $username, $password, $database);
+//Comentario hecho por el profe para poder ejecutar el Action
 
 if ($conn->connect_error) {
     die("<p style='color:red;'> Error de connexió: " . $conn->connect_error . "</p>");
